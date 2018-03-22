@@ -1,4 +1,5 @@
 import javax.ws.rs.Path;
+import javax.ws.rs.core.MediaType;
 
 /* @(#) $Id$
  *
@@ -10,11 +11,13 @@ import javax.ws.rs.Path;
  * @author Piotr Maciaszek
  */
 
-@Path("test")
+@Path("/test")
+@Consumes({ MediaType.APPLICATION_JSON })
+@Produces({ MediaType.APPLICATION_JSON })
 public class HelloTest {
     
     @GET
-    @Path("hello")
+    @Path("/hello")
     public String hello() {
         return "dupa";
     }
